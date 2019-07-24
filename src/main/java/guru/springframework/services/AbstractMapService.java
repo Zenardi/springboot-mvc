@@ -4,9 +4,7 @@ import guru.springframework.domain.DomainObject;
 
 import java.util.*;
 
-/**
- * Created by jt on 11/14/15.
- */
+
 public abstract class AbstractMapService  {
     protected Map<Integer, DomainObject> domainMap;
 

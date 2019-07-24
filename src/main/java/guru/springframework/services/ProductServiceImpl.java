@@ -10,9 +10,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by jt on 11/6/15.
- */
+
 @Service
 @Profile("map")
 public class ProductServiceImpl extends AbstractMapService implements ProductService {

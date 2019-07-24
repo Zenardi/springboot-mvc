@@ -18,9 +18,8 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-/**
- * Created by jt on 11/16/15.
- */
+
+
 public class ProductControllerTest {
 
     @Mock //Mockito Mock object

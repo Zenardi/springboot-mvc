@@ -6,9 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Version;
 
-/**
- * Created by jt on 11/14/15.
- */
+
 @Entity
 public class Customer implements DomainObject {
 
