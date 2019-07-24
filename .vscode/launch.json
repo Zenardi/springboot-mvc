@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringmvcApplication<springmvc>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "guru.springframework.SpringmvcApplication",
+            "projectName": "springmvc",
+            "args": ""
+        }
+    ]
+}
