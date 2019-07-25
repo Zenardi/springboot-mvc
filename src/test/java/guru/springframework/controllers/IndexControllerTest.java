@@ -9,7 +9,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-
+/**
+ * Created by jt on 11/16/15.
+ */
 public class IndexControllerTest {
 
     private MockMvc mockMvc;
@@ -27,7 +29,7 @@ public class IndexControllerTest {
     public void testIndex() throws Exception{
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(view().name("indexdd"));
+                .andExpect(view().name("index"));
     }
 
 }

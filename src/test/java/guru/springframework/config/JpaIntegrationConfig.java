@@ -5,12 +5,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * JpaIntegrationConfig
+ * Created by jt on 12/14/15.
  */
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan
+@ComponentScan("guru.springframework")
 public class JpaIntegrationConfig {
-
-    
 }
