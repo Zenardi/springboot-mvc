@@ -1,8 +1,4 @@
 node {
-    // reference to maven
-    // ** NOTE: This 'maven-3.6.1' Maven tool must be configured in the Jenkins Global Configuration.   
-    def mvnHome = tool 'maven-3.6.1'
-
     // holds reference to docker image
     def dockerImage
     // ip address of the docker private repository(nexus)
@@ -17,7 +13,7 @@ node {
       sh "mvn -Dmaven.test.failure.ignore clean package"
     }
 	
-	stage('Publish Tests Results'){
+    stage('Publish Tests Results'){
       parallel(
         publishJunitTestsResultsToJenkins: {
           echo "Publish junit Tests Results"
