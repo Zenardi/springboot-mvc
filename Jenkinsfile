@@ -7,6 +7,11 @@ node {
     def dockerImageName = "springmvc"
     def dockerImageTag = "${dockerRepoUrl}/${dockerImageName}:${env.BUILD_NUMBER}"
      
+    stage ("Get Source") {
+        // run a command to get the source code download
+        sh "git clonehttps://github.com/Zenardi/springboot-mvc.git"
+        
+    }
   
     stage('Build Project') {
       // build project via maven
