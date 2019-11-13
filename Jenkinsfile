@@ -9,7 +9,7 @@ node {
      
     stage ("Get Source") {
         // run a command to get the source code download
-        sh "git pull https://github.com/Zenardi/springboot-mvc.git ."
+        sh "git pull https://github.com/Zenardi/springboot-mvc.git"
         
     }
   
