@@ -20,16 +20,19 @@ node {
 	
     stage('Build Docker Image') {
       // build docker image
-      dockerImage = docker.build("springmvc")
+      dockerImage = docker.build("zenardi/springmvc")
     }
    
     stage('Deploy Docker Image'){
       
       // deploy docker image to nexus
-
-      echo "Docker Image Tag Name: ${dockerImageTag}"
-
-      sh "docker tag ${dockerImageName} ${dockerImageTag}"
-      sh "docker push ${dockerImageTag}"
+       echo "Docker Image Tag Name: ${dockerImageTag}"
+       sh "docker tag ${dockerImageName} ${dockerImageTag}"
+       sh "docker push ${dockerImageTag}"
+	       
+       //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+       //app.push("${env.BUILD_NUMBER}")
+       //app.push("latest")
+			
     }
 }
