@@ -18,6 +18,12 @@ node {
       sh "mvn clean package"
     }
 	
+
+	stage('DockerLint'){
+	 sh "docker run --rm -i hadolint/hadolint < Dockerfile"	
+	}
+	
+	
     stage('Build Docker Image and Push') {
        // build docker image
        docker.withRegistry('https://registry.hub.docker.com', 'docker') {	
