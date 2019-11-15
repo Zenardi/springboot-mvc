@@ -34,7 +34,7 @@ node {
     }
 
     stage('Deploy - Update Infrastructure'){
-        sh "./stack-update.sh springmvc ./prd.yaml ./webapp-params.json"
+        sh "./stack-update.sh springmvc prd.yaml webapp-params.json"
     }
 
 }
