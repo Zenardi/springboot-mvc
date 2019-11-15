@@ -30,7 +30,7 @@ node {
        //sh "docker tag ${dockerImageName} ${dockerImageTag}"
        //sh "docker push ${dockerImageTag}"
 	       
-       docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+       docker.withRegistry('https://registry.hub.docker.com', 'docker') {
           app.push("${env.BUILD_NUMBER}")
           app.push("latest")
        }		
