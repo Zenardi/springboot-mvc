@@ -26,13 +26,13 @@ node {
     stage('Deploy Docker Image'){
       
       // deploy docker image to nexus
-       echo "Docker Image Tag Name: ${dockerImageTag}"
-       sh "docker tag ${dockerImageName} ${dockerImageTag}"
-       sh "docker push ${dockerImageTag}"
+       //echo "Docker Image Tag Name: ${dockerImageTag}"
+       //sh "docker tag ${dockerImageName} ${dockerImageTag}"
+       //sh "docker push ${dockerImageTag}"
 	       
-       //docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-       //app.push("${env.BUILD_NUMBER}")
-       //app.push("latest")
+       docker.withRegistry('https://registry.hub.docker.com', 'dockerlogin') {
+       app.push("${env.BUILD_NUMBER}")
+       app.push("latest")
 			
     }
 }
