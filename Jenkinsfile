@@ -20,8 +20,11 @@ node {
 	
     stage('Build Docker Image and Push') {
        // build docker image
-       dockerImage = docker.build("zenardi/springmvc")
-       dockerImage.push()
+       docker.withRegistry('https://registry.hub.docker.com', 'docker') {	
+           dockerImage = docker.build("zenardi/springmvc")
+           /* Push the container to the custom Registry */
+           dockerImage.push()
+       }
     }
 
 }
