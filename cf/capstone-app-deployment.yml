@@ -21,9 +21,9 @@ spec:
         app: capstone-app
     spec:
       containers:
-      - image: zenardi/springmvc:latest
+      - image: mirch/udacity-capstone-project:latest
         imagePullPolicy: Always
         name: capstone-app
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
           protocol: TCP

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ns
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springmvc
+  template:
+    metadata:
+      labels:
+        app: springmvc
+    spec:
+      containers:
+      - name: springmvc
+        image: zenardi/springmvc:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080

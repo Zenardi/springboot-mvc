@@ -1,5 +1,7 @@
 Description: >
-    EKS cluster Creation
+    Capstone project for Cloud DevOps Engineering Nanodegree
+    Author - Mircea Teodor Oprea
+    Creating the EKS cluster.
 Parameters:
   EnvironmentName:
     Description: An Environment name that will be prefixed to resources
@@ -9,7 +11,7 @@ Resources:
     Type: AWS::EKS::Cluster
     Properties:
       Version: '1.13'
-      RoleArn:  arn:aws:iam::620613630634:role/KubernetesAdmin #arn:aws:iam::358599436160:role/eks-role
+      RoleArn: arn:aws:iam::358599436160:role/eks-role
       ResourcesVpcConfig:
         SecurityGroupIds:
         - Fn::ImportValue:

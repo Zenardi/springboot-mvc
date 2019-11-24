@@ -6,7 +6,7 @@
     },
     {
         "ParameterKey": "SshKey",
-        "ParameterValue": "devops"
+        "ParameterValue": "mircea-proj-5"
     },
     {
         "ParameterKey":"DesiredInstances",

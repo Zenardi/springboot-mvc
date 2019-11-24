@@ -130,8 +130,8 @@ resource "aws_launch_configuration" "demo" {
   associate_public_ip_address = true
   iam_instance_profile        = "${aws_iam_instance_profile.demo-node.name}"
   image_id                    = "${data.aws_ami.eks-worker.id}"
-  instance_type               = "m4.large"
-  name_prefix                 = "terraform-eks-demo"
+  instance_type               = "t2.micro"
+  name_prefix                 = "terraform-eks-springboot"
   security_groups             = ["${aws_security_group.demo-node.id}"]
   user_data_base64            = "${base64encode(local.demo-node-userdata)}"
 
@@ -146,7 +146,7 @@ resource "aws_autoscaling_group" "demo" {
   max_size             = 2
   min_size             = 1
   name                 = "terraform-eks-demo"
-  vpc_zone_identifier  = ["${aws_subnet.demo.*.id}"]
+  vpc_zone_identifier  = ["aws_subnet.demo.*.id"]
 
   tag {
     key                 = "Name"
@@ -155,7 +155,7 @@ resource "aws_autoscaling_group" "demo" {
   }
 
   tag {
-    key                 = "kubernetes.io/cluster/${var.cluster-name}"
+    key                 = "kubernetes.io/cluster/var.cluster-name"
     value               = "owned"
     propagate_at_launch = true
   }

@@ -34,24 +34,20 @@ resource "aws_subnet" "demo" {
 
 resource "aws_internet_gateway" "demo" {
   vpc_id = "${aws_vpc.demo.id}"
-
-  tags {
-    Name = "terraform-eks-demo"
-  }
 }
 
 resource "aws_route_table" "demo" {
-  vpc_id = "${aws_vpc.demo.id}"
+  vpc_id = "aws_vpc.demo.id"
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.demo.id}"
+    gateway_id = "aws_internet_gateway.demo.id"
   }
 }
 
 resource "aws_route_table_association" "demo" {
   count = 2
 
-  subnet_id      = "${aws_subnet.demo.*.id[count.index]}"
-  route_table_id = "${aws_route_table.demo.id}"
+  subnet_id      =  "aws_subnet.demo.*.id"
+  route_table_id = "aws_route_table.demo.id"
 }

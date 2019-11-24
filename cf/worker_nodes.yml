@@ -1,4 +1,6 @@
 Description: >
+    Capstone project for Cloud DevOps Engineering Nanodegree
+    Author - Mircea Teodor Oprea
     Creating the worker nodes.
     Based on AWS documentation available at https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html
 Parameters:
@@ -114,7 +116,7 @@ Resources:
     Properties:
       AssociatePublicIpAddress: 'true'
       IamInstanceProfile: !Ref InstanceProfile
-      ImageId: ami-06d51e91cea0dac8d #ami-01ffee931e45bb6bf
+      ImageId: ami-01ffee931e45bb6bf
       InstanceType: m3.medium
       KeyName: !Ref SshKey
       SecurityGroups:
