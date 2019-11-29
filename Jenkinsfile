@@ -37,7 +37,13 @@ node {
       echo 'Deploying to AWS...'
       dir ('./terraform/app') {
         //withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
-            sh "aws eks --region us-east-1 update-kubeconfig --name terraform-eks-demo"
+            //sh "aws eks --region us-east-1 update-kubeconfig --name terraform-eks-demo"
+            sh 'sudo apt-get update && sudo apt-get install -y apt-transport-https'
+            sh 'curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -'
+            sh 'echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list'
+            sh 'sudo apt-get update'
+            sh 'sudo apt-get install -y kubectl'
+            sh 'kubectl version'
             sh 'pwd'
             sh 'kubectl apply -f web.yaml'
             //sh "kubectl get nodes"
