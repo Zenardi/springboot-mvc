@@ -37,10 +37,10 @@ node {
       echo 'Deploying to AWS...'
       dir ('./aws') {
         withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
-            sh "aws eks --region us-west-2 update-kubeconfig --name springboot"
-            sh 'kubectl apply -f capstone-app-deployment.yaml'
-            sh "kubectl get nodes"
-            sh "kubectl get pods"
+            //sh "aws eks --region us-west-2 update-kubeconfig --name springboot"
+            sh 'kubectl apply -f terraform/app/web.yaml'
+            //sh "kubectl get nodes"
+            //sh "kubectl get pods"
         }
       }
     }
