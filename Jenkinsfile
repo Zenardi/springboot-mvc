@@ -38,7 +38,7 @@ node {
       dir ('./terraform/app') {
         withAWS(credentials: 'aws-credentials', region: 'us-east-1') {
             //sh "aws eks --region us-east-1 update-kubeconfig --name terraform-eks-demo"
-            sh 'kubectl version'
+            //sh 'kubectl version'
             sh 'kubectl apply -f web.yaml'
             //sh "kubectl get nodes"
             //sh "kubectl get pods"
