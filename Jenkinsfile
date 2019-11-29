@@ -38,7 +38,9 @@ node {
       dir ('./terraform/app') {
         //withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
             //sh "aws eks --region us-west-2 update-kubeconfig --name springboot"
-            sh 'kubectl apply -f web.yaml'
+            sh 'pwd'
+            sh 'll'
+            sh 'kubectl apply -f terraform/app/web.yaml'
             //sh "kubectl get nodes"
             //sh "kubectl get pods"
         //}
