@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: ns
 spec:
+  selector:
+    app: springmvc
   ports:
     - port: 8080
       targetPort: 32032
