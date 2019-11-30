@@ -37,7 +37,8 @@ node {
       echo 'Deploying to AWS...'
       dir ('./terraform/app') {
         withAWS(credentials: 'aws-credentials', region: 'us-west-2') {
-            sh 'kubectl rolling-update springmvc -f web.yaml'
+            //sh 'kubectl rolling-update springmvc -f web.yaml'
+            sh 'kubectl set image deployment/ns springmvc=zenardi/springmvc:latest --record'
         }
       }
     }
